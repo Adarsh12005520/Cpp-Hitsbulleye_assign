@@ -1,0 +1,148 @@
+Qns 1)
+
+Write a program to print the area and perimeter of a triangle having sides of 3, 4 and 5 units by creating a class named 'Triangle' with the constructor having the three sides as its parameters.
+
+
+Solution
+
+#include<iostream>
+#include<math.h>
+
+using namespace std;
+
+class Triangle
+{
+	public:
+	void area(int a,int b,int c);
+	void perimeter(int a,int b,int c);
+};
+
+void Triangle::area(int a,int b,int c)
+{
+	float s=((a+b+c)/2.0),A=sqrt(s*(s-a)(s-b)(s-c));
+	cout<<"Area of a triangle is: "<<A<<" sq. units\n";
+}
+
+void Triangle::perimeter(int a,int b,int c)
+{
+	cout<<"Perimeter of a triangle is: "<<a+b+c<<" units\n";
+}
+
+int main()
+{
+	Triangle tr1;
+	int side1=3,side2=4,side3=5;
+	tr1.area(side1,side2,side3);
+	tr1.perimeter(side1,side2,side3);
+	return 0;
+}
+
+
+
+
+
+
+
+
+Qns 2)
+Write a program to print the area of two rectangles having sides (4,5) and (5,8) respectively by creating a class named 'Rectangle' with a function named 'Area' which returns the area. Length and breadth are passed as parameters to its constructor.
+
+
+Solution
+
+#include <iostream>
+
+using namespace std;
+
+class Rectangle
+{
+    
+    private:
+        int length;
+        int breadth;
+    public:
+       
+        Rectangle(int length, int breadth)
+        {
+            
+            this->length = length;
+            this->breadth = breadth;
+        }
+        
+        int Area()
+        {
+            // calculating and returning Area
+            return length * breadth;
+        }
+};
+
+int main()
+{
+    
+    Rectangle rectangle1(4,5); 
+   
+    Rectangle rectangle2(5,8); 
+
+    cout<<"\nArea of first rectangle  :"<<rectangle1.Area();
+     
+    cout<<"\nArea of second rectangle :"<<rectangle2.Area();
+    return 0;
+}
+
+
+
+
+
+
+Qns 3)
+Write a program to print the area of a rectangle by creating a class named 'Area' taking the values of its length and breadth as parameters of its constructor and having a function named 'returnArea' which returns the area of the rectangle. Length and breadth of the rectangle are entered through keyboard.
+
+
+Solution
+
+#include<iostream>
+using namespace std;
+class Area{
+	public:
+		int len,width;
+		void getArea(){
+			cout<<"Enter the length: ";
+			cin>>len;
+			cout<<"Enter width: ";
+			cin>>width;
+		}
+		void returnArea(){
+			cout<<"Area is: "<<len*width;
+		}
+};
+int main(){
+	Area A;
+	A.getArea();
+	A.returnArea();
+}
+
+
+Qns 4)
+Print the average of three numbers entered by the user by creating a class named 'Average' having a function to calculate and print the average without creating any object of the Average class.
+
+Solution
+
+#include <iostream>
+using namespace std;
+class Average{
+    public:
+    static float calculateAverage(float a, float b, float c){
+        return (a + b + c) / 3;
+    }
+};
+
+
+int main(){
+    cout<<"Enter three numbers: ";
+    float a, b, c;
+    cin>>a;
+    cin>>b;
+    cin>>c;
+    cout<<"The average is: "<<Average::calculateAverage(a,b,c)<<endl;
+    return 0;
+}
